@@ -1,0 +1,142 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+    <style>
+      *,
+      *::after,
+      *::before{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Anonymous Pro', monospace;
+        background-image: url("./assets/background.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .title {
+        font-size: 48px;
+        text-align: center;
+        position: absolute;
+        z-index: -1;
+        font-weight: 500;
+        position: fixed;
+        top: 50%;
+        color: whitesmoke;
+      }
+
+      .images-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .image {
+        width: 300px;
+        height: 300px;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+        margin: 10px;
+        cursor: pointer;
+        -webkit-filter: drop-shadow(1px 1px 0 white)
+                  drop-shadow(-1px -1px 0 white);
+  filter: drop-shadow(1px 1px 0 white) 
+          drop-shadow(-1px -1px 0 white);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Feliz cumpleaños Mady</h1>
+      <div class="images-container">
+        <img class="image" src="./assets/abogado.png" alt="">
+        <img class="image" src="./assets/abogado2.png" alt="">
+        <img class="image" src="./assets/alle.png" alt="">
+        <img class="image" src="./assets/alleria.png" alt="">
+        <img class="image" src="./assets/anmy.png" alt="">
+        <img class="image" src="./assets/charapa2.png" alt="">
+        <img class="image" src="./assets/dafan2.png" alt="">
+        <img class="image" src="./assets/dafan3.png" alt="">
+        <img class="image" src="./assets/dafancat.png" alt="">
+        <img class="image" src="./assets/dafangrupo.png" alt="">
+        <img class="image" src="./assets/dibujito.jpg" alt="">
+        <img class="image" src="./assets/eddie.png" alt="">
+        <img class="image" src="./assets/image8.png" alt="">
+        <img class="image" src="./assets/elfan.png" alt="">
+        <img class="image" src="./assets/image1.png" alt="">
+        <img class="image" src="./assets/image2.png" alt="">
+        <img class="image" src="./assets/image10.png" alt="">
+        <img class="image" src="./assets/image11.png" alt="">
+        <img class="image" src="./assets/image14.png" alt="">
+        <img class="image" src="./assets/io.png" alt="">
+        <img class="image" src="./assets/javier.png" alt="">
+        <img class="image" src="./assets/jehrenym.png" alt="">
+        <img class="image" src="./assets/katty.png" alt="">
+        <img class="image" src="./assets/rena.png" alt="">
+        <img class="image" src="./assets/lalo.png" alt="">
+        <img class="image" src="./assets/mady.png" alt="">
+        <img class="image" src="./assets/mady03.png" alt="">
+        <img class="image" src="./assets/meididi.png" alt="">
+        <img class="image" src="./assets/moco.png" alt="">
+        <img class="image" src="./assets/moco2.png" alt="">
+        <img class="image" src="./assets/quien2.png" alt="">
+        <img class="image" src="./assets/moco3.png" alt="">
+        <img class="image" src="./assets/moco4.png" alt="">
+        <img class="image" src="./assets/moco5.png" alt="">
+        <img class="image" src="./assets/mocoo.png" alt="">
+        <img class="image" src="./assets/niss.png" alt="">
+        <img class="image" src="./assets/profe3.png" alt="">
+        <img class="image" src="./assets/quiebn.png" alt="">
+        <img class="image" src="./assets/random.png" alt="">
+        <img class="image" src="./assets/realgatita.png" alt="">
+        
+        <img class="image" src="./assets/renana.png" alt="">
+        <img class="image" src="./assets/sinmar.png" alt="">
+        <img class="image" src="./assets/sakku.png" alt="">
+        <img class="image" src="./assets/solyn.png" alt="">
+        <img class="image" src="./assets/steven2.png" alt="">
+        <img class="image" src="./assets/tiokta.png" alt="">
+        <img class="image" src="./assets/weon.png" alt="">
+      </div>
+    </div>
+    <script>
+      const images = document.querySelectorAll(".image");
+      let animations = [];
+      images.forEach(image => {
+        const animation = anime({
+          targets: image,
+          translateX: anime.random(-50, 50),
+          translateY: anime.random(-50, 50),
+          scale: [0, 1],
+          opacity: [0, 1],
+          easing: "easeInOutQuad",
+          duration: anime.random(1000, 5000),
+          delay: anime.random(0, 500),
+          direction: "alternate",
+          loop: true
+        });
+        animations.push(animation);
+        image.addEventListener("mouseenter", () => {
+          animation.pause();
+        })
+        image.addEventListener("mouseleave", () => {
+          animation.play();
+        })
+      });
+    </script>
+  </body>
+</html>
